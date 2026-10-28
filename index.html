@@ -5,33 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DBK LOGISTICS</title>
   <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden; /* ป้องกันการสกอลล์ซ้ำซ้อนภายนอก */
-    }
-    .container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+    body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+    .container  { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+    iframe      { width: 100%; height: 100%; border: none; }
   </style>
 </head>
 <body>
   <div class="container">
-    <iframe 
-      src="https://script.google.com/macros/s/AKfycby4I1iGj6owrirhkoZZiDYeH0XtY3Slx7z5hBnKtD3FJbstYiNH-4kvouuxxxC1GwT5Mg/exec" 
-      allow="geolocation; microphone; camera" 
-      sandbox="allow-scripts allow-same-origin allow-forms">
+    <iframe
+      id="app"
+      allow="geolocation; microphone; camera"
+      sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation">
     </iframe>
   </div>
+
+  <script>
+    var BASE  = 'https://script.google.com/macros/s/AKfycbzCTuYMZj2U0ryD3LwpH29VJr9pq4ugNDkbq85-Qvwu9TyKGCuM2GbuuShnwaKE3oBxAg/exec';
+    var empId = new URLSearchParams(window.location.search).get('empId') || '';
+    document.getElementById('app').src = empId ? BASE + '?empId=' + encodeURIComponent(empId) : BASE;
+  </script>
 </body>
 </html>
