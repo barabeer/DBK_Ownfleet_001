@@ -20,7 +20,7 @@
   </div>
 
   <script>
-    var BASE  = 'https://script.google.com/macros/s/AKfycbzcb5yHbbE5KFitupghmhH85PDrjBZK3J0tHYM66Ee_gWT3V6Xw2lRgqHra7PMlZBVbGQ/exec';
+    var BASE  = 'https://script.google.com/macros/s/AKfycbxeopGoL2QvkLQD5YTR9XTYVAxUUH6qBbYIJ8wSWUqTLI7eKMzTXBYcbECtzDwn9Dn8GQ/exec';
     var empId = new URLSearchParams(window.location.search).get('empId') || '';
     document.getElementById('app').src = empId ? BASE + '?empId=' + encodeURIComponent(empId) : BASE;
   </script>
